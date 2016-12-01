@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeugUI">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <Button mnemonicParsing="false" text="Löschen" />
+                <Button mnemonicParsing="false" text="Bearbeiten" />
+                  <Button mnemonicParsing="false" text="Anlegen" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="15.0" />
+                  <Button mnemonicParsing="false" text="Suchen" />
+                  <TextField promptText="Suche..." />
+              </items>
+            </ToolBar>
+         </top>
+         <center>
+            <TableView fx:id="_tableTeilnehmer" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="_columnVorname" prefWidth="75.0" text="Vorname" />
+                <TableColumn fx:id="_columnNachname" prefWidth="75.0" text="Nachname" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

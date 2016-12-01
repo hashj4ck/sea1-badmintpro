@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="_rootPane" prefHeight="600.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.framewerkzeug.FrameWerkzeugUI">
+   <top>
+      <MenuBar styleClass="header" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Programm">
+            <items>
+              <MenuItem fx:id="_menuOptionBeenden" mnemonicParsing="false" text="Beenden" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Grunddaten">
+               <items>
+                  <MenuItem fx:id="_menuOptionTeilnehmer" mnemonicParsing="false" text="Teilnehmer" />
+                  <MenuItem mnemonicParsing="false" text="Spielplätze" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Turnier">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Turniersteuerung" />
+                  <MenuItem mnemonicParsing="false" text="Matches" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
