@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import materialien.Teilnehmer;
 import werkzeuge.abstraction.AbstractWerkzeugUI;
 
@@ -37,6 +38,9 @@ public class TeilnehmerWerkzeugUI extends AbstractWerkzeugUI {
 	
 	@FXML
 	TextField _searchTextfield;
+	
+	@FXML
+	BorderPane _borderpane;
 
 	/**
 	 * Getter-Methode zu _tableTeilnehmer. Ermöglicht es einem Klienten, den
@@ -106,6 +110,16 @@ public class TeilnehmerWerkzeugUI extends AbstractWerkzeugUI {
 	 */
 	public TextField get_searchTextfield() {
 		return _searchTextfield;
+	}
+
+	/**
+	 * Getter-Methode zu _borderpane.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _borderpane abzufragen.
+	 *
+	 * @return the _borderpane
+	 */
+	public BorderPane get_borderpane() {
+		return _borderpane;
 	}
 
 }

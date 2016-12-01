@@ -1,8 +1,11 @@
 package werkzeuge.subwerkzeuge.teilnehmerwerkzeug.anlegenoption;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.layout.Pane;
 import werkzeuge.abstraction.AbstractSubwerkzeug;
 import werkzeuge.abstraction.Subwerkzeug;
+import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeug;
 
 /**
  * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
@@ -14,12 +17,13 @@ import werkzeuge.abstraction.Subwerkzeug;
 public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 
 	TeilnehmerWerkzeugAnlegenUI _ui;
+	TeilnehmerWerkzeug _teilnehmerWerkzeug;
 
 	/**
 	 * Konstruktor fuer neue Exemplare der Klasse TeilnehmerWerkzeugAnlegen.
 	 */
-	public TeilnehmerWerkzeugAnlegen() {
-		// TODO Auto-generated constructor stub
+	public TeilnehmerWerkzeugAnlegen(TeilnehmerWerkzeug teilnehmerwerkzeug) {
+		_teilnehmerWerkzeug = teilnehmerwerkzeug;
 	}
 
 	/**
@@ -42,7 +46,13 @@ public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 	 */
 	@Override
 	public void registriereUIAktionen() {
-		// TODO Auto-generated method stub
+		_ui.get_abbrechenButton().setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				_teilnehmerWerkzeug.setzeSubwerkzeug(null);
+			}
+		});
 
 	}
 

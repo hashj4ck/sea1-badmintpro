@@ -2,7 +2,7 @@ package werkzeuge.subwerkzeuge.teilnehmerwerkzeug;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.layout.Border;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import services.ServiceManager;
@@ -96,8 +96,9 @@ public class TeilnehmerWerkzeug extends AbstractSubwerkzeug {
 	 */
 	@Override
 	public void setzeSubwerkzeug(Subwerkzeug Subwerkzeug) {
-		BorderPane pane = (BorderPane) _ui.getPane();
-		pane.setRight(pane);
+		
+		_ui.get_borderpane().setRight(Subwerkzeug.getPane());
+		
 	}
 
 }

@@ -18,30 +18,82 @@ public class TeilnehmerWerkzeugAnlegenUI extends AbstractWerkzeugUI {
 
 	@FXML
 	CheckBox _gebuehrCheckbox;
-	
 	@FXML
 	TextField _vornameTextfield;
 	@FXML
-	
 	TextField _nachnameTextfield;
 	@FXML
-	
 	TextField _emailTextfield;
 	@FXML
-	
 	Button _speichernButton;
 	@FXML
-	
 	Button _abbrechenButton;
-	@FXML
-	
-	Pane _rootPane;
 
 	/**
 	 * Konstruktor fuer neue Exemplare der Klasse TeilnehmerWerkzeugAnlegenUI.
 	 */
 	public TeilnehmerWerkzeugAnlegenUI() {
 		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * Getter-Methode zu _gebuehrCheckbox.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _gebuehrCheckbox abzufragen.
+	 *
+	 * @return the _gebuehrCheckbox
+	 */
+	public CheckBox get_gebuehrCheckbox() {
+		return _gebuehrCheckbox;
+	}
+
+	/**
+	 * Getter-Methode zu _vornameTextfield.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _vornameTextfield abzufragen.
+	 *
+	 * @return the _vornameTextfield
+	 */
+	public TextField get_vornameTextfield() {
+		return _vornameTextfield;
+	}
+
+	/**
+	 * Getter-Methode zu _nachnameTextfield.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _nachnameTextfield abzufragen.
+	 *
+	 * @return the _nachnameTextfield
+	 */
+	public TextField get_nachnameTextfield() {
+		return _nachnameTextfield;
+	}
+
+	/**
+	 * Getter-Methode zu _emailTextfield.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _emailTextfield abzufragen.
+	 *
+	 * @return the _emailTextfield
+	 */
+	public TextField get_emailTextfield() {
+		return _emailTextfield;
+	}
+
+	/**
+	 * Getter-Methode zu _speichernButton.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _speichernButton abzufragen.
+	 *
+	 * @return the _speichernButton
+	 */
+	public Button get_speichernButton() {
+		return _speichernButton;
+	}
+
+	/**
+	 * Getter-Methode zu _abbrechenButton.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _abbrechenButton abzufragen.
+	 *
+	 * @return the _abbrechenButton
+	 */
+	public Button get_abbrechenButton() {
+		return _abbrechenButton;
 	}
 
 }
