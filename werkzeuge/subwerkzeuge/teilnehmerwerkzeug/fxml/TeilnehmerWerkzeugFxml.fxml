@@ -13,12 +13,12 @@
          <top>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
-                  <Button mnemonicParsing="false" text="Löschen" />
-                <Button mnemonicParsing="false" text="Bearbeiten" />
-                  <Button mnemonicParsing="false" text="Anlegen" />
+                  <Button fx:id="_loeschenButton" mnemonicParsing="false" text="Löschen" />
+                <Button fx:id="_bearbeitenButton" mnemonicParsing="false" text="Bearbeiten" />
+                  <Button fx:id="_anlegenButton" mnemonicParsing="false" text="Anlegen" />
                   <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="15.0" />
-                  <Button mnemonicParsing="false" text="Suchen" />
-                  <TextField promptText="Suche..." />
+                  <Button fx:id="_searchButton" mnemonicParsing="false" text="Suchen" />
+                  <TextField fx:id="_searchTextfield" promptText="Suche..." />
               </items>
             </ToolBar>
          </top>

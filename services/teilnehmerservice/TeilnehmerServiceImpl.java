@@ -16,13 +16,13 @@ import services.observer.AbstractObservableService;
  */
 public class TeilnehmerServiceImpl extends AbstractObservableService implements TeilnehmerService {
 
-	private ObservableList<Teilnehmer> _teilnehmerListe;
+	private List<Teilnehmer> _teilnehmerListe;
 
 	/**
 	 * Konstruktor fuer neue Exemplare der Klasse TeilnehmerServiceImpl.
 	 */
 	public TeilnehmerServiceImpl(List<Teilnehmer> teilnehmer) {
-		_teilnehmerListe = FXCollections.observableArrayList(teilnehmer);
+		_teilnehmerListe = teilnehmer;
 		informiereUeberAenderung();
 	}
 
@@ -95,7 +95,7 @@ public class TeilnehmerServiceImpl extends AbstractObservableService implements 
 	 */
 	@Override
 	public ObservableList<Teilnehmer> getTeilnehmerObservableList() {
-		return _teilnehmerListe;
+		return FXCollections.observableArrayList(_teilnehmerListe);
 	}
 
 	/**

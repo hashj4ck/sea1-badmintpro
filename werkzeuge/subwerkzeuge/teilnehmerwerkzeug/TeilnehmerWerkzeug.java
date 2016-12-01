@@ -1,9 +1,15 @@
 package werkzeuge.subwerkzeuge.teilnehmerwerkzeug;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import services.ServiceManager;
+import services.observer.ServiceObserver;
 import werkzeuge.abstraction.AbstractSubwerkzeug;
 import werkzeuge.abstraction.Subwerkzeug;
+import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.anlegenoption.TeilnehmerWerkzeugAnlegen;
 
 /**
  * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
@@ -24,7 +30,15 @@ public class TeilnehmerWerkzeug extends AbstractSubwerkzeug {
 	 */
 	@Override
 	public void registriereUIAktionen() {
-		// TODO Auto-generated method stub
+
+		_ui.get_anlegenButton().setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				setzeSubwerkzeug(new TeilnehmerWerkzeugAnlegen());
+
+			}
+		});
 
 	}
 
@@ -36,7 +50,14 @@ public class TeilnehmerWerkzeug extends AbstractSubwerkzeug {
 	 */
 	@Override
 	public void registriereListener() {
-		// TODO Auto-generated method stub
+		ServiceManager.teilnehmerservice().registriereBeobachter(new ServiceObserver() {
+
+			@Override
+			public void reagiereAufAenderung() {
+				_ui.get_tableTeilnehmer().setItems(ServiceManager.teilnehmerservice().getTeilnehmerObservableList());
+
+			}
+		});
 
 	}
 
@@ -75,8 +96,8 @@ public class TeilnehmerWerkzeug extends AbstractSubwerkzeug {
 	 */
 	@Override
 	public void setzeSubwerkzeug(Subwerkzeug Subwerkzeug) {
-		// TODO Auto-generated method stub
-
+		BorderPane pane = (BorderPane) _ui.getPane();
+		pane.setRight(pane);
 	}
 
 }
