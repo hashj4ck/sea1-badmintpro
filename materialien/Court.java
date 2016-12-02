@@ -2,6 +2,8 @@ package materialien;
 
 import fachwerte.Status;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
@@ -23,7 +25,33 @@ public class Court
      */
     public Court(String name, int courtID)
     {
-	_name.set(name);
-	_courtID.set(courtID);
+	_name= new SimpleStringProperty(name);
+	_courtID= new SimpleIntegerProperty(courtID);
+	_status= new Status(Status.FREI);
     }
+    /**
+     * Gibt den Courtnamen zurück
+     * @return der Courtname
+     */
+    public StringProperty getName()
+    {
+	return _name;
+    }
+    /** 
+     * Setzt einen neuen Namen für das Spielfeld
+     * @param name Der neue Courtname
+     */
+    public void setName(String name)
+    {
+	_name.set(name);
+    }
+    /**
+     * Gibt die ID des Spielfelds zurück.
+     * @return die CourtID
+     */
+    public IntegerProperty getCourtID()
+    {
+	return _courtID;
+    }
+    
 }
