@@ -9,7 +9,11 @@ import javafx.beans.property.StringProperty;
  * Ein Match wird zwischen zwei Teams in einer Runde auf einem Court ausgetragen
  * und kennt dabei seinen Status.
  * 
- * @author Julia-Marie
+ * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
+ * @author Julia-Marie Stache <julia-marie.stache@haw-hamburg.de>
+ * @version 03.12.2016
+ * @see materialien
+ * @since 03.12.2016 , 21:47:31
  *
  */
 public class Match {
