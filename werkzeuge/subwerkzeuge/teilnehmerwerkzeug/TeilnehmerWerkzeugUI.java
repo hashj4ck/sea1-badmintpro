@@ -28,6 +28,12 @@ public class TeilnehmerWerkzeugUI extends AbstractWerkzeugUI {
 	TableColumn<Teilnehmer, String> _columnNachname;
 	
 	@FXML
+	TableColumn<Teilnehmer, String> _columnEmail;
+	
+	@FXML
+	TableColumn<Teilnehmer, Boolean> _columnBezahlt;
+	
+	@FXML
 	Button _bearbeitenButton;
 	
 	@FXML
@@ -35,6 +41,9 @@ public class TeilnehmerWerkzeugUI extends AbstractWerkzeugUI {
 	
 	@FXML
 	Button _loeschenButton;
+	
+	@FXML
+	Button _searchButton;
 	
 	@FXML
 	TextField _searchTextfield;
@@ -120,6 +129,36 @@ public class TeilnehmerWerkzeugUI extends AbstractWerkzeugUI {
 	 */
 	public BorderPane get_borderpane() {
 		return _borderpane;
+	}
+
+	/**
+	 * Getter-Methode zu _searchButton.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _searchButton abzufragen.
+	 *
+	 * @return the _searchButton
+	 */
+	public Button get_searchButton() {
+		return _searchButton;
+	}
+
+	/**
+	 * Getter-Methode zu _columnEmail.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _columnEmail abzufragen.
+	 *
+	 * @return the _columnEmail
+	 */
+	public TableColumn<Teilnehmer, String> get_columnEmail() {
+		return _columnEmail;
+	}
+
+	/**
+	 * Getter-Methode zu _columnBezahlt.
+	 * Ermöglicht es einem Klienten, den Wert der Exemplarvariablen _columnBezahlt abzufragen.
+	 *
+	 * @return the _columnBezahlt
+	 */
+	public TableColumn<Teilnehmer, Boolean> get_columnBezahlt() {
+		return _columnBezahlt;
 	}
 
 }

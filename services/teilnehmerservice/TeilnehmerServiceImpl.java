@@ -32,10 +32,10 @@ public class TeilnehmerServiceImpl extends AbstractObservableService implements 
 	public TeilnehmerServiceImpl() {
 		_teilnehmerListe = FXCollections.observableArrayList();
 		
-		_teilnehmerListe.add(new Teilnehmer("Hans", "Mueller", 2));
-		_teilnehmerListe.add(new Teilnehmer("Elisabeth", "Schneider", 1));
-		_teilnehmerListe.add(new Teilnehmer("Anton", "Hoffmann", 4));
-		_teilnehmerListe.add(new Teilnehmer("Christian", "Bargmann", 3));
+		_teilnehmerListe.add(new Teilnehmer("Hans", "Mueller", "klaus@web.de", 2));
+		_teilnehmerListe.add(new Teilnehmer("Elisabeth", "Schneider", null, 1));
+		_teilnehmerListe.add(new Teilnehmer("Anton", "Hoffmann", null, 4));
+		_teilnehmerListe.add(new Teilnehmer("Christian", "Bargmann", null, 3));
 		informiereUeberAenderung();
 	}
 

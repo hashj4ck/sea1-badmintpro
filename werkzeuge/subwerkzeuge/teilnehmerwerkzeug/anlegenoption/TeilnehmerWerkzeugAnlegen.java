@@ -3,6 +3,8 @@ package werkzeuge.subwerkzeuge.teilnehmerwerkzeug.anlegenoption;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.Pane;
+import materialien.Teilnehmer;
+import services.ServiceManager;
 import werkzeuge.abstraction.AbstractSubwerkzeug;
 import werkzeuge.abstraction.Subwerkzeug;
 import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeug;
@@ -50,7 +52,19 @@ public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 
 			@Override
 			public void handle(ActionEvent event) {
-				_teilnehmerWerkzeug.setzeSubwerkzeug(null);
+				_teilnehmerWerkzeug.entferneSubwerkzeug(_teilnehmerWerkzeug);
+			}
+		});
+
+		_ui.get_speichernButton().setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Teilnehmer teilnehmer = new Teilnehmer(_ui.get_vornameTextfield().getText(),
+						_ui.get_nachnameTextfield().getText(), _ui.get_emailTextfield().getText(), 1);
+				ServiceManager.teilnehmerservice().fuegeTeilnehmerEin(teilnehmer);
+				_teilnehmerWerkzeug.entferneSubwerkzeug(_teilnehmerWerkzeug);
+
 			}
 		});
 

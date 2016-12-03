@@ -8,7 +8,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.subwerkzeuge.teilnehmerwerkzeug.anlegenoption.TeilnehmerWerkzeugAnlegenUI">
    <center>
-      <AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="14.0" layoutY="14.0" text="Teilnehmer anlegen" />
             <GridPane layoutX="15.0" layoutY="61.0" prefHeight="172.0" prefWidth="570.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="59.0">
@@ -34,7 +34,7 @@
                </children>
             </GridPane>
             <Separator layoutX="14.0" layoutY="43.0" prefHeight="0.0" prefWidth="537.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <HBox alignment="CENTER_RIGHT" layoutY="500.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <HBox alignment="BOTTOM_RIGHT" layoutY="500.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Button fx:id="_speichernButton" mnemonicParsing="false" text="Speichern" />
                   <Button fx:id="_abbrechenButton" mnemonicParsing="false" text="Abbrechen">

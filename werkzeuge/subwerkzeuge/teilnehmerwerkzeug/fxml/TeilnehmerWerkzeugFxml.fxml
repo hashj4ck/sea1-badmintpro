@@ -27,6 +27,8 @@
               <columns>
                 <TableColumn fx:id="_columnVorname" prefWidth="75.0" text="Vorname" />
                 <TableColumn fx:id="_columnNachname" prefWidth="75.0" text="Nachname" />
+                  <TableColumn fx:id="_columnEmail" prefWidth="75.0" text="Emailadresse" />
+                  <TableColumn fx:id="_columnBezahlt" prefWidth="75.0" text="Bezahlt" />
               </columns>
             </TableView>
          </center>
