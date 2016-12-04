@@ -1,5 +1,6 @@
 package services.teilnehmerservice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -84,7 +85,7 @@ public class TeilnehmerServiceImpl extends AbstractObservableService implements 
 	 */
 	@Override
 	public List<Teilnehmer> getTeilnehmerList() {
-		return _teilnehmerListe.subList(0, _teilnehmerListe.size());
+		return new ArrayList<Teilnehmer>(_teilnehmerListe);
 	}
 
 	/**

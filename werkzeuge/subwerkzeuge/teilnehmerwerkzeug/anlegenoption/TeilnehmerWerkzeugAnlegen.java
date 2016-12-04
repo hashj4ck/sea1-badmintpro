@@ -2,12 +2,13 @@ package werkzeuge.subwerkzeuge.teilnehmerwerkzeug.anlegenoption;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import materialien.Teilnehmer;
 import services.ServiceManager;
 import werkzeuge.abstraction.AbstractSubwerkzeug;
 import werkzeuge.abstraction.Subwerkzeug;
-import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeug;
 
 /**
  * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
@@ -19,14 +20,6 @@ import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeug;
 public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 
 	TeilnehmerWerkzeugAnlegenUI _ui;
-	TeilnehmerWerkzeug _teilnehmerWerkzeug;
-
-	/**
-	 * Konstruktor fuer neue Exemplare der Klasse TeilnehmerWerkzeugAnlegen.
-	 */
-	public TeilnehmerWerkzeugAnlegen(TeilnehmerWerkzeug teilnehmerwerkzeug) {
-		_teilnehmerWerkzeug = teilnehmerwerkzeug;
-	}
 
 	/**
 	 * Ueberschreiben der Methode setzeSubwerkzeug in der Klasse Subwerkzeug.
@@ -52,7 +45,7 @@ public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 
 			@Override
 			public void handle(ActionEvent event) {
-				_teilnehmerWerkzeug.entferneSubwerkzeug(_teilnehmerWerkzeug);
+				informiereUeberAenderung();
 			}
 		});
 
@@ -60,11 +53,31 @@ public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 
 			@Override
 			public void handle(ActionEvent event) {
-				Teilnehmer teilnehmer = new Teilnehmer(_ui.get_vornameTextfield().getText(),
-						_ui.get_nachnameTextfield().getText(), _ui.get_emailTextfield().getText(), 1);
-				ServiceManager.teilnehmerservice().fuegeTeilnehmerEin(teilnehmer);
-				_teilnehmerWerkzeug.entferneSubwerkzeug(_teilnehmerWerkzeug);
+				if (_ui.get_vornameTextfield().getText().equals("")
+						|| _ui.get_nachnameTextfield().getText().equals("")) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Hinweis!");
+					alert.setHeaderText("Fehlende Werte gefunden!");
+					alert.setContentText(
+							"Ein oder mehrere Attribute fehlen in der Eingabemaske. Bitte tragen Sie die Informationen nach und Speichern sie erneut.");
 
+					alert.showAndWait();
+				} else {
+
+					Teilnehmer teilnehmer = new Teilnehmer(_ui.get_vornameTextfield().getText(),
+							_ui.get_nachnameTextfield().getText(), _ui.get_emailTextfield().getText(), 1);
+
+					if (_ui.get_gebuehrCheckbox().isSelected()) {
+						teilnehmer.bezahlt(true);
+					} else {
+						teilnehmer.bezahlt(false);
+					}
+
+					ServiceManager.teilnehmerservice().fuegeTeilnehmerEin(teilnehmer);
+
+					loescheFeldeingaben();
+					informiereUeberAenderung();
+				}
 			}
 		});
 
@@ -103,6 +116,16 @@ public class TeilnehmerWerkzeugAnlegen extends AbstractSubwerkzeug {
 	protected void initialisiereLayout() {
 		_ui = (TeilnehmerWerkzeugAnlegenUI) this.getFxml("fxml/TeilnehmerWerkzeugAnlegenFxml.fxml");
 
+	}
+
+	/**
+	 * Setzt alle GUI-Eingaben auf Default zurueck.
+	 */
+	private void loescheFeldeingaben() {
+		_ui.get_vornameTextfield().setText(null);
+		_ui.get_nachnameTextfield().setText(null);
+		_ui.get_emailTextfield().setText(null);
+		_ui.get_gebuehrCheckbox().setSelected(false);
 	}
 
 }

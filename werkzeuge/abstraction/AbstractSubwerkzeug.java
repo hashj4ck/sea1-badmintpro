@@ -3,6 +3,7 @@ package werkzeuge.abstraction;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
+import werkzeuge.observer.ObservableSubwerkzeug;
 
 /**
  * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
@@ -11,7 +12,7 @@ import javafx.fxml.FXMLLoader;
  * @since 19.11.2016 , 01:44:04
  *
  */
-public abstract class AbstractSubwerkzeug implements Subwerkzeug {
+public abstract class AbstractSubwerkzeug extends ObservableSubwerkzeug implements Subwerkzeug {
 
 	/**
 	 * Konstruktor fuer neue Exemplare der Klasse AbstractWerkzeug.

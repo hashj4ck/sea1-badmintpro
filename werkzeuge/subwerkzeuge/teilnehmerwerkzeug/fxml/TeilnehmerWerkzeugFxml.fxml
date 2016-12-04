@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeugUI">
+<AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeugUI">
    <children>
       <BorderPane fx:id="_borderpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -17,8 +17,8 @@
                 <Button fx:id="_bearbeitenButton" mnemonicParsing="false" text="Bearbeiten" />
                   <Button fx:id="_anlegenButton" mnemonicParsing="false" text="Anlegen" />
                   <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="15.0" />
-                  <Button fx:id="_searchButton" mnemonicParsing="false" text="Suchen" />
                   <TextField fx:id="_searchTextfield" promptText="Suche..." />
+                  <Button fx:id="_searchButton" mnemonicParsing="false" text="Suchen" />
               </items>
             </ToolBar>
          </top>
