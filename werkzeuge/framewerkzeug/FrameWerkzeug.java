@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import werkzeuge.abstraction.AbstractSubwerkzeug;
 import werkzeuge.abstraction.StageWerkzeug;
 import werkzeuge.abstraction.Subwerkzeug;
+import werkzeuge.subwerkzeuge.courtwerkzeug.CourtWerkzeug;
 import werkzeuge.subwerkzeuge.dashboardwerkzeug.DashboardWerkzeug;
 import werkzeuge.subwerkzeuge.teilnehmerwerkzeug.TeilnehmerWerkzeug;
 
@@ -54,6 +55,15 @@ public class FrameWerkzeug extends AbstractSubwerkzeug implements StageWerkzeug 
 			@Override
 			public void handle(ActionEvent event) {
 				setzeSubwerkzeug(new TeilnehmerWerkzeug());
+
+			}
+		});
+
+		_ui.get_menuOptionCourts().setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				setzeSubwerkzeug(new CourtWerkzeug());
 
 			}
 		});

@@ -23,7 +23,7 @@
             <Menu mnemonicParsing="false" text="Grunddaten">
                <items>
                   <MenuItem fx:id="_menuOptionTeilnehmer" mnemonicParsing="false" text="Teilnehmer" />
-                  <MenuItem mnemonicParsing="false" text="Spielplätze" />
+                  <MenuItem fx:id="_menuOptionCourts" mnemonicParsing="false" text="Spielplätze" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Turnier">

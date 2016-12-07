@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="_rootPane" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="werkzeuge.subwerkzeuge.courtwerkzeug.CourtWerkzeugUI">
+   <children>
+      <BorderPane fx:id="_borderpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <Button fx:id="_loeschenButton" mnemonicParsing="false" text="Löschen" />
+                <Button fx:id="_bearbeitenButton" mnemonicParsing="false" text="Bearbeiten" />
+                  <Button fx:id="_anlegenButton" mnemonicParsing="false" text="Anlegen" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="15.0" />
+                  <TextField fx:id="_searchTextfield" promptText="Suche..." />
+                  <Button fx:id="_searchButton" mnemonicParsing="false" text="Suchen" />
+              </items>
+            </ToolBar>
+         </top>
+         <center>
+            <TableView fx:id="_tableCourts" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="_columnName" prefWidth="111.0" text="Court" />
+                <TableColumn fx:id="_columnBeschreibung" prefWidth="218.0" text="Beschreibung" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

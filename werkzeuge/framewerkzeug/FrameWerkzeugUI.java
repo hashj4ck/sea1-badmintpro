@@ -23,6 +23,9 @@ public class FrameWerkzeugUI extends AbstractStageWerkzeugUI {
 	@FXML
 	MenuItem _menuOptionTeilnehmer;
 
+	@FXML
+	MenuItem _menuOptionCourts;
+
 	/**
 	 * Getter-Methode zu _menuOptionBeenden. Ermöglicht es einem Klienten, den
 	 * Wert der Exemplarvariablen _menuOptionBeenden abzufragen.
@@ -41,6 +44,16 @@ public class FrameWerkzeugUI extends AbstractStageWerkzeugUI {
 	 */
 	public MenuItem get_menuOptionTeilnehmer() {
 		return _menuOptionTeilnehmer;
+	}
+
+	/**
+	 * Getter-Methode zu _menuOptionCourts. Ermöglicht es einem Klienten, den
+	 * Wert der Exemplarvariablen _menuOptionCourts abzufragen.
+	 *
+	 * @return the _menuOptionCourts
+	 */
+	public MenuItem get_menuOptionCourts() {
+		return _menuOptionCourts;
 	}
 
 }
