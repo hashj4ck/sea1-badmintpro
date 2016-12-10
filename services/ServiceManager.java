@@ -2,6 +2,7 @@ package services;
 
 import services.courtservice.CourtService;
 import services.courtservice.CourtServiceImpl;
+import services.matchservice.MatchService;
 import services.teilnehmerservice.TeilnehmerService;
 import services.teilnehmerservice.TeilnehmerServiceImpl;
 
@@ -16,6 +17,7 @@ public class ServiceManager {
 
 	private static TeilnehmerService _teilnehmerservice;
 	private static CourtService _courtservice;
+	private static MatchService _matchservice;
 
 	/**
 	 * Getter-Methode zu _teilnehmerservice. Ermöglicht es einem Klienten, den
