@@ -1,6 +1,8 @@
 package materialien;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,6 +23,7 @@ public class Team implements Comparable<Team>
     private IntegerProperty _teamID;
     private IntegerProperty _gesamtPunktzahl;
     private IntegerProperty _anzahlSiege;
+    private Set<Team> _gegner;
 
     /**
      * Ein Team bestimmt aus mindestens einem Teilnehmer und hat einen Namen.
@@ -33,6 +36,7 @@ public class Team implements Comparable<Team>
 	_teamName=new SimpleStringProperty(teamname);
 	_gesamtPunktzahl.set(0);
 	_anzahlSiege.set(0);
+	_gegner = new HashSet<>();
     }
     /**
      * Gibt die Gesamtzahl aller bis jetzt erreichten Punkte aus.
@@ -122,7 +126,14 @@ public class Team implements Comparable<Team>
 	    }
 	}
 	return result;
-	
+    }
+    public void fuegeGegnerHinzu(Team team)
+    {
+	_gegner.add(team);
+    }
+    public Set<Team> getGegner()
+    {
+	return _gegner;
     }
     
     
