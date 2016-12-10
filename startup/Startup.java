@@ -2,6 +2,7 @@ package startup;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import services.ServiceManager;
 import werkzeuge.abstraction.StageWerkzeug;
 import werkzeuge.framewerkzeug.FrameWerkzeug;
 
@@ -18,7 +19,6 @@ public class Startup extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-
 		StageWerkzeug testzwei = new FrameWerkzeug();
 		testzwei.zeigeFenster();
 
