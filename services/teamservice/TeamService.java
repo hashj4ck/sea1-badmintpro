@@ -51,6 +51,9 @@ public interface TeamService extends ObservableService
     	 * @return
     	 */
     	ObservableList<Team> getTeamObservableList();
+    	
+    	List<Team> sortiereTeams();
+    	
 
     }
 

@@ -13,7 +13,7 @@ import javafx.beans.property.StringProperty;
  * @author Julia-Marie
  *
  */
-public class Team
+public class Team implements Comparable<Team>
 {
 
     private List<Teilnehmer> _mitglieder;
@@ -92,6 +92,37 @@ public class Team
     public IntegerProperty get_teamID()
     {
         return _teamID;
+    }
+    @Override
+    /**
+     * @return 0, wenn die Teams die gleiche Punktzahl und die gleiche Anzahl Siege haben.
+     * @return -1, wenn das zu vergleichende Team mehr Punkte und/oder mehr Siege hat
+     * @return 1, wenn das zu vergleichende Team weniger Punkte und/oder weniger Siege hat.
+     */
+    public int compareTo(Team team2)
+    {
+	int result=0;
+	if(this._gesamtPunktzahl== team2.get_gesamtPunktzahl() && this._anzahlSiege== team2.get_anzahlSiege())
+	{
+	    result= 0;
+	}
+	if(this._gesamtPunktzahl.get()>team2.get_gesamtPunktzahl().get())
+	{
+	    result= 1;
+	}
+	if(this._gesamtPunktzahl.get()==team2._gesamtPunktzahl.get())
+	{
+	    if(this.get_anzahlSiege().get()>team2.get_anzahlSiege().get())
+	    {
+		result= 1;
+	    }
+	    else
+	    {
+		result= -1;
+	    }
+	}
+	return result;
+	
     }
     
     

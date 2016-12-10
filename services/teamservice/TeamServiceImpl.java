@@ -73,5 +73,8 @@ public class TeamServiceImpl extends AbstractObservableService implements TeamSe
     {
 	return FXCollections.observableArrayList(_teamliste);
     }
-
-}
+    List<Team> sortiereTeams()
+    {
+	
+    }
+    }
