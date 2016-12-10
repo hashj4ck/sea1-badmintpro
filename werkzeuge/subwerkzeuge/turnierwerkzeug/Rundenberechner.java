@@ -1,12 +1,11 @@
 package werkzeuge.subwerkzeuge.turnierwerkzeug;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import fachwerte.Status;
 import materialien.Court;
 import materialien.Match;
 import materialien.Team;
-import materialien.Teilnehmer;
 
 /**
  * @author Christian Bargmann <christian.bargmann@haw-hamburg.de>
@@ -19,6 +18,7 @@ public class Rundenberechner {
 
 	int _turnierrunde;
 	List<Match> _matchliste;
+	List<Team> _teamliste;
 
 	/**
 	 * Konstruktor fuer neue Exemplare der Klasse Rundenberechner.
@@ -34,26 +34,46 @@ public class Rundenberechner {
 	 * @param teilnehmerliste
 	 * @return
 	 */
-	public List<Match> erstelleTurnier(List<Team> teamliste, List<Court> courtliste) {
+	public List<Match> erstelleTurnier(List<Team> teamliste) {
 		return null;
 	}
 
 	/**
-	 * Beendet eine Turnierrunde und startet die naechste
-	 * 
-	 * @return
+	 * @require Courts passen durch Magie immer
+	 * @require Teams sind immer gerade
+	 * @param teamliste
+	 * @param courtliste
 	 */
-	public List<Match> erhoeheRunde() {
-		// Wenn nicht alle Matches beendet sind, abbrechen
-		for (Match m : _matchliste) {
-			if (!(m.getStatus().equals(Status.BEENDET))) {
-				return null;
+	private void generiereMatches(List<Team> teamliste, List<Court> courtliste) {
+		teamliste.sort(null);
+
+		int anzahlTeams = teamliste.size();
+		List<Match> result = new ArrayList<Match>();
+		int courtindex = 0;
+
+		while (teamliste.size() > 0) {
+			Team zuVergleichendesTeam = teamliste.get(0);
+			for (int i = 1; i < teamliste.size(); i++) {
+				if (zuVergleichendesTeam.getGegner().contains(teamliste.get(i))) {
+					// Wenn Teams schonmal zusammengespielt haben
+				} else {
+					// Wenn Teams nicht gegegeinander gespielt haben
+					// Fuelle neue Liste mit Matches
+					result.add(new Match(zuVergleichendesTeam, teamliste.get(i), courtliste.get(courtindex),
+							_turnierrunde));
+
+					// Aktualisiere Teambegegnungen
+					zuVergleichendesTeam.fuegeGegnerHinzu(teamliste.get(i));
+					teamliste.get(i).fuegeGegnerHinzu(zuVergleichendesTeam);
+
+					// Entferne Teams aus der alten Teamliste
+					teamliste.remove(i);
+					teamliste.remove(0);
+					break;
+				}
 			}
 		}
-
-		for (Match m : _matchliste) {
-
-		}
-
+		_turnierrunde++;
+		_matchliste = result;
 	}
 }
